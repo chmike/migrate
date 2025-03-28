@@ -13,6 +13,13 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
+// NewSteps instantiates a new migration step sequence. The name should not be
+// empty and ideally unique to the database as it is used to compute the root
+// checksum identifying the database.
+func NewSteps(name string) *migrate.Steps {
+	return migrate.NewSteps(name)
+}
+
 type config struct {
 	tableName string
 }
