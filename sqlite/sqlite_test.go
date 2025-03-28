@@ -16,7 +16,7 @@ import (
 
 // createSteps creates two sqlite migration steps.
 func createSteps() *migrate.Steps {
-	s := migrate.NewSteps("test database")
+	s := NewSteps("test database")
 
 	// v1
 	s.Append("create table",
